@@ -23,7 +23,7 @@ gulp.task('build', function() {
   bundler
     .add(entryFile)
     .transform('babelify')
-    .transform({global: true}, 'uglifyify')
+    // .transform({global: true}, 'uglifyify')
 
   var stream = bundler.bundle();
   stream.on('error', function (err) { console.error(err.toString()) });

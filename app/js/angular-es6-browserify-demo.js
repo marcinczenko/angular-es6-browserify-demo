@@ -1,10 +1,10 @@
-var angular = require('angular');
+import 'angular/angular.js';
 
-var demoModule = angular.module('angular-es6-browserify-demo',[])
+let demoModule = angular.module('angular-es6-browserify-demo',[])
     
-    .controller('DemoController', ['$scope', function($scope) {
+    .controller('DemoController', ['$scope', ($scope) => {
         $scope.title = 'angular-es6-browserify-demo';
-        $scope.description = 'AngularJS is so awesome!'
+        $scope.description = 'AngularJS is so awesome!';
     }]);
 
-module.exports = demoModule;
+export default demoModule;
