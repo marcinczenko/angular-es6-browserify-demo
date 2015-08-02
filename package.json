@@ -32,8 +32,10 @@
   "devDependencies": {
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
+    "browserify-ngannotate": "^1.0.1",
     "exorcist": "^0.4.0",
     "gulp": "^3.8.11",
+    "gulp-ng-annotate": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "mkdirp": "^0.5.1",
     "mold-source-map": "^0.4.0",

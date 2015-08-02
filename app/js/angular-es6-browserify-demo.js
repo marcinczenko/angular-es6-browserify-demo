@@ -1,10 +1,8 @@
 import 'angular/angular.js';
+import DemoController from './demo-controller.js'
 
-let demoModule = angular.module('angular-es6-browserify-demo',[])
+let demoModule = angular.module('angular-es6-browserify-demo',[]);
     
-    .controller('DemoController', ['$scope', ($scope) => {
-        $scope.title = 'angular-es6-browserify-demo';
-        $scope.description = 'AngularJS is so awesome!';
-    }]);
+demoModule.controller('DemoController', /*@ngInject*/ DemoController);
 
 export default demoModule;

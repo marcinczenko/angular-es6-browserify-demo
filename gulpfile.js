@@ -8,7 +8,6 @@ var mold = require('mold-source-map');
 var exorcist = require('exorcist');
 var mkdirp = require('mkdirp');
  
-// Basic usage
 gulp.task('build', function() {
   var entryFile = './app/js/angular-es6-browserify-demo.js';
   var mapfile = path.join(__dirname, 'dist/index.js.map');
@@ -23,7 +22,8 @@ gulp.task('build', function() {
   bundler
     .add(entryFile)
     .transform('babelify')
-    // .transform({global: true}, 'uglifyify')
+    .transform({add: true, single_quotes: true}, 'browserify-ngannotate')
+    .transform({global: true}, 'uglifyify')
 
   var stream = bundler.bundle();
   stream.on('error', function (err) { console.error(err.toString()) });
@@ -32,10 +32,12 @@ gulp.task('build', function() {
     .pipe(mold.transformSourcesRelativeTo('./'))
     .pipe(exorcist(mapfile))
     .pipe(source(entryFile))    
-    .pipe(rename('index.js'))
+    .pipe(rename('index.js'))    
     .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('watch', function() {
   gulp.watch(['./app/js/**/*'], ['build']);
 });
+
+gulp.task('default', ['build']);
