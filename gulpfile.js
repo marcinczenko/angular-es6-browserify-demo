@@ -7,6 +7,14 @@ var path = require('path');
 var mold = require('mold-source-map');
 var exorcist = require('exorcist');
 var mkdirp = require('mkdirp');
+
+var sass = require('gulp-sass');
+
+gulp.task('sass', function () {
+  gulp.src('./app/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('dist/css'));
+});
  
 gulp.task('build', function() {
   var entryFile = './app/js/angular-es6-browserify-demo.js';

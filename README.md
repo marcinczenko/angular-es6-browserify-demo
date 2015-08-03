@@ -1,5 +1,7 @@
 # angular-es6-browserify-demo
 
+> This is work in progress project. More documentation will be added soon.
+
 This is a light startup project for angular, ES6, and browserify.
 
 ## Installing
@@ -21,6 +23,7 @@ Just for the sake of experimenting I am using [koa] as the server.
 To begin serving, just run:
 
     npm start
+
 
 [exorcist]: https://www.npmjs.com/package/exorcist
 [koa]: http://koajs.com
